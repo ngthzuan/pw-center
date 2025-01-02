@@ -37,7 +37,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 local Window = Fluent:CreateWindow({
     --ai skid thì nhớ đổi tên =)
     --táo hub , aniee hub :>
-    Title = "pw center",
+    Title = "123 Lot Quan Em Ra",
     SubTitle = "Version : Bu source 🤑😭",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
