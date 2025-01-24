@@ -1,6 +1,6 @@
 -- Kiểm tra nếu game đã tải
 if not game:IsLoaded() then
-    game.Loaded:Wait()
+    game.Loaded:Wait()
 end
 
 -- Tạo ScreenGui
@@ -30,29 +30,29 @@ bannerLabel.Position = UDim2.new(0, 50, 0.5, -50) -- Vị trí (góc trái giữ
 bannerLabel.BackgroundTransparency = 1 -- Nền trong suốt
 bannerLabel.TextScaled = true -- Tự động co giãn chữ
 bannerLabel.Font = Enum.Font.SourceSansBold -- Font chữ đậm
-bannerLabel.Text = "W-azure Auto Bounty - discord.gg/w-azure"
+bannerLabel.Text = "W-azure Auto Bounty discord.gg/w-azure"
 bannerLabel.TextStrokeTransparency = 0 -- Đường viền chữ
 bannerLabel.TextStrokeColor3 = Color3.new(0, 0, 0) -- Viền đen
 
 -- Biến màu sắc để tạo hiệu ứng 7 màu
 local rainbowColors = {
-    Color3.fromRGB(255, 0, 0),   -- Đỏ
-    Color3.fromRGB(255, 127, 0), -- Cam
-    Color3.fromRGB(255, 255, 0), -- Vàng
-    Color3.fromRGB(0, 255, 0),   -- Lục
-    Color3.fromRGB(0, 255, 255), -- Lam nhạt
-    Color3.fromRGB(0, 0, 255),   -- Lam
-    Color3.fromRGB(139, 0, 255)  -- Tím
+    Color3.fromRGB(255, 0, 0),   -- Đỏ
+    Color3.fromRGB(255, 127, 0), -- Cam
+    Color3.fromRGB(255, 255, 0), -- Vàng
+    Color3.fromRGB(0, 255, 0),   -- Lục
+    Color3.fromRGB(0, 255, 255), -- Lam nhạt
+    Color3.fromRGB(0, 0, 255),   -- Lam
+    Color3.fromRGB(139, 0, 255)  -- Tím
 }
 
 -- Hàm đổi màu gradient
 local function updateRainbow()
-    while true do
-        for _, color in ipairs(rainbowColors) do
-            bannerLabel.TextColor3 = color
-            task.wait(0.1)
-        end
-    end
+    while true do
+        for _, color in ipairs(rainbowColors) do
+            bannerLabel.TextColor3 = color
+            task.wait(0.1)
+        end
+    end
 end
 
 -- Chạy hàm đổi màu 7 màu
@@ -65,13 +65,13 @@ local lastUpdate = 0
 
 -- Hàm cập nhật FPS
 RunService.RenderStepped:Connect(function(deltaTime)
-    frameCount = frameCount + 1
-    lastUpdate = lastUpdate + deltaTime
+    frameCount = frameCount + 1
+    lastUpdate = lastUpdate + deltaTime
 
-    if lastUpdate >= 1 then
-        local fps = math.floor(frameCount / lastUpdate)
-        fpsLabel.Text = "FPS: " .. tostring(fps)
-        lastUpdate = 0
-        frameCount = 0
-    end
+    if lastUpdate >= 1 then
+        local fps = math.floor(frameCount / lastUpdate)
+        fpsLabel.Text = "FPS: " .. tostring(fps)
+        lastUpdate = 0
+        frameCount = 0
+    end
 end)
